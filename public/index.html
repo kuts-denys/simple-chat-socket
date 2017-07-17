@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Chat</title>
+</head>
+<body>
+<section class="wrapper">
+    <div class="modal-window">
+        <p class="modal-window__title">Welcome to the chat!</p>
+        <form action="" class="registration-form">
+            <label for="name">User Name</label>
+            <input class="registration-form__name-input" type="text" id="name" placeholder="Name">
+            <label for="nickname">User Nickname</label>
+            <input class="registration-form__nickname-input" type="text" id="nickname" placeholder="Nickname">
+            <button class="registration-form__submit-button" type="submit">Confirm</button>
+        </form>
+    </div>
+    <ul class="users-list">
+        <li class="users-list__item users-list__title">Users</li>
+    </ul>
+    <div class="messages-wrapper">
+        <ul class="messages-list">
+            <li class="messages-list__typing-notify"></li>
+        </ul>
+        <div class="form-container">
+            <form class="form" action="/">
+                <input id="messageInput" class="form__user-input" autocomplete="off" placeholder="Type yor message here.."/>
+                <button class="form__submit-button" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</section>
+<script src="/socket.io/socket.io.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>
+

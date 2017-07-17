@@ -1,0 +1,217 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+    display: flex;
+}
+
+.modal-window {
+    z-index: 1;
+    position: absolute;
+    background-color: #343B80;
+    color: #ffffff;
+    width: 400px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -200px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.modal-window__title {
+    text-align: center;
+    margin: 0 0 30px 0;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.registration-form input {
+    padding: 5px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.registration-form__submit-button {
+    width: 40%;
+    align-self: flex-end;
+    border: none;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.registration-form__submit-button:hover {
+    background-color: #292F66;
+    color: #ffffff;
+}
+
+.messages-wrapper {
+    height: 100vh;
+    width: 87%;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages-list {
+    position: relative;
+    padding-bottom: 20px;
+    height: calc(85vh - 20px);
+    overflow: auto;
+}
+
+.users-list {
+    width: 13%;
+    height: 100vh;
+    background-color: #343B80;
+    color: #ffffff;
+    overflow: auto;
+}
+
+.form-container {
+    height: calc(15vh + 20px);
+    padding-top: 20px;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.users-list__item {
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.users-list__name {
+    border-top: 1px solid #767676;
+}
+
+.users-list__name:hover {
+    background-color: #292F66;
+    cursor: pointer;
+}
+
+.users-list__name p {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.user-status {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    left: -20px;
+    top: 5px;
+    border-radius: 50%;
+}
+
+.user-status--online {
+    background-color: limegreen;
+}
+
+.user-status--offline {
+    background-color: darkred;
+}
+
+.user-status--recent {
+    background-color: yellow;
+}
+
+.users-list__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.message-list__notification {
+    font-size: 1.1rem;
+    font-style: italic;
+    padding: 10px 5% 10px 20px;
+}
+
+.messages-list__message {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 5% 10px 20px;
+    width: 100%;
+}
+
+.messages-list__message-author {
+    margin: 0;
+    font-weight: bold;
+}
+
+.message-time {
+    align-self: center;
+    padding-left: 10px;
+    font-size: 0.85rem;
+    flex-grow: 1;
+}
+
+.messages-list__message-body {
+    flex-basis: 100%;
+    margin: 5px 0 0;
+}
+
+.messages-list__typing-notify {
+    position: fixed;
+    height: 20px;
+    font-size: 1.1rem;
+    font-style: italic;
+    bottom: 15vh;
+    width: 100%;
+    padding-left: 20px;
+    background-color: white;
+}
+
+.form__user-input {
+    width: 80vw;
+    padding: 15px 10px;
+    border-radius: 5px;
+    outline:none;
+    border: 1px solid lightgrey;
+}
+
+.form__submit-button {
+    margin-left: 5px;
+    padding: 15px 15px;
+    outline:none;
+    border: none;
+    border-radius: 5px;
+}
+
+.form__submit-button:hover {
+    background-color: #343B80;
+    color: white;
+    cursor: pointer;
+}
