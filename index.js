@@ -43,6 +43,7 @@ io.on('connection', (socket) => {
   });
   socket.on('user disconnected', (nickname) => {
     userSelectors.changeUserStatus(nickname, 'offline');
+    socket.emit('user disconnected', nickname);
     socket.broadcast.emit('user disconnected', nickname);
   });
   socket.on('new message', (data) => {

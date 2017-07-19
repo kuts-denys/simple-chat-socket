@@ -6,6 +6,8 @@ const id = localStorage.getItem('socketId');
 const messageForm = document.querySelector('.form');
 const messageInput = document.querySelector('.form__user-input');
 const typingContainer = document.querySelector('.messages-list__typing-notify');
+const nicknameContainer = document.querySelector('.users-list__nickname');
+const logoutButton = document.querySelector('.users-list__logout');
 
 messageInput.addEventListener('input', () => {
   const nickname = localStorage.getItem('nickname');
@@ -45,7 +47,14 @@ if (!id) {
     localStorage.setItem('nickname', nickname);
     localStorage.setItem('name', name);
     registrationForm.parentNode.style.display = 'none';
-
+    nicknameContainer.innerHTML = `Nickname: ${nickname}`;
+    messagesList.innerHTML = '';
+    logoutButton.addEventListener('click', () => {
+      localStorage.clear();
+      socket.emit('user disconnected', nickname);
+      nicknameContainer.innerHTML = 'Nickname:';
+      registrationForm.parentNode.style.display = 'block';
+    });
     window.onbeforeunload = () => {
       socket.emit('user disconnected', nickname);
       socket.close();

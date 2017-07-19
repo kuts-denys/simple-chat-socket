@@ -105,6 +105,16 @@ ul {
     align-items: center;
 }
 
+.users-list__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.users-list__logout {
+    border: none;
+}
+
+
 .users-list__item {
     padding: 10px 10px;
     text-align: center;
